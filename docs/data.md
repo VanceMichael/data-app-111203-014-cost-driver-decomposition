@@ -9,11 +9,15 @@
 | `observation_id` | str | 必填 |
 | `job` | str | 必填 |
 | `pool` | str | 必填 |
-| `period` | int | 允许空值，空值不是零 |
+| `period` | int | 必填 |
 | `cost` | float | 必填 |
-| `work` | float | 允许空值，空值不是零 |
-| `duration` | float | 允许空值，空值不是零 |
-| `hardware` | str | 允许空值，空值不是零 |
-| `priority` | str | 允许空值，空值不是零 |
+| `work` | float | 必填 |
+| `duration` | float | 必填 |
+| `hardware` | str | 必填 |
+| `priority` | str | 必填 |
 
 时间字段 day、week、tick、hour、minute、cycle、start_day、reported_day、known_at、visible_at、opened、observed 均以各字段名所述的相对时间单位表示整数；不同字段并不必然代表同一种时间。缺少的登记码与浓度等信息保持为空。示例只表达产品数据结构，不能代替实际调查资料。
+
+## 业务字段语义
+
+cost 为元，work 为标准化工作单位，duration 为运行小时。period 为结算期，pool 为资源池，hardware 为硬件种类，priority 为提交时优先级。summary 的单位成本为总 cost / 总 work。
