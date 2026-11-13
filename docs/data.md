@@ -21,3 +21,5 @@
 ## 业务字段语义
 
 cost 为元，work 为标准化工作单位，duration 为运行小时。period 为结算期，pool 为资源池，hardware 为硬件种类，priority 为提交时优先级。summary 的单位成本为总 cost / 总 work。
+
+work 允许为 0；零工作量但有 cost 的单元是有效观测，单位成本显式为空（null），不得补零或丢弃。decompose 命令以两个 period 参数选取对比期，按配置维度（pool、hardware、priority 的子集）聚合单元；分解方法与手算案例见 `docs/decomposition.md`。

@@ -5,3 +5,4 @@ GROUP = 'pool'
 MEASURE = 'cost'
 PRODUCT = 'cost-driver-decomposition'
 UNIT = '元'
+DIMENSIONS = ('pool', 'hardware', 'priority')
